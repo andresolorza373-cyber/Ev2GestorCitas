@@ -1,0 +1,70 @@
+
+ion-content {
+  --background: #f4f6fa;
+}
+
+.welcome-section {
+  text-align: center;
+  margin: 28px 10px;
+}
+
+.welcome-section h1 {
+  color: #222222;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.welcome-section p {
+  color: #666666;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.quote-card {
+  margin: 20px 0;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+ion-card-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.quote-phrase {
+  color: #222222;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  margin: 20px 5px;
+}
+
+.quote-author {
+  color: #666666;
+  font-size: 15px;
+  font-style: italic;
+  text-align: right;
+  margin: 18px 5px;
+}
+
+.status-message {
+  color: #666666;
+  text-align: center;
+  line-height: 1.5;
+  padding: 12px;
+}
+
+.error-message {
+  color: #eb445a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.navigation-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}

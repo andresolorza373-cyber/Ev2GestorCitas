@@ -1,0 +1,36 @@
+
+.quote-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin: 12px 0;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #3880ff;
+}
+
+.quote-phrase {
+  color: #222222;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.quote-author {
+  color: #666666;
+  font-size: 14px;
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.delete-button {
+  display: block;
+  margin-left: auto;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #eb445a;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}

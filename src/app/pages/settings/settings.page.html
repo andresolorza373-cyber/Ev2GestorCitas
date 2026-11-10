@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h2>Preferencias de la aplicación</h2>
+
+  @if (loading) {
+    <p>Cargando configuración...</p>
+  } @else {
+    <ion-item>
+      <ion-toggle
+        [checked]="settings.darkMode"
+        (ionChange)="updateDarkMode($event)"
+      >
+        Modo oscuro
+      </ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-toggle
+        [checked]="settings.showAuthor"
+        (ionChange)="updateShowAuthor($event)"
+      >
+        Mostrar autor de las citas
+      </ion-toggle>
+    </ion-item>
+  }
+
+  @if (errorMessage) {
+    <p class="error-message">{{ errorMessage }}</p>
+  }
+
+  @if (successMessage) {
+    <p class="success-message">{{ successMessage }}</p>
+  }
+
+  <ion-button
+    expand="block"
+    fill="outline"
+    routerLink="/home"
+  >
+    Volver al inicio
+  </ion-button>
+
+</ion-content>

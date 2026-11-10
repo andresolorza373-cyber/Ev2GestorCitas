@@ -1,0 +1,87 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Gestor de Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrar nueva cita</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="stacked">Frase</ion-label>
+        <ion-textarea
+          [(ngModel)]="phrase"
+          placeholder="Escribe una cita famosa..."
+          [autoGrow]="true"
+          rows="3">
+        </ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Autor</ion-label>
+        <ion-input
+          [(ngModel)]="author"
+          placeholder="Nombre del autor">
+        </ion-input>
+      </ion-item>
+
+      <ion-button
+        expand="block"
+        class="ion-margin-top"
+        (click)="addQuote()"
+        [disabled]="loading">
+        Guardar cita
+      </ion-button>
+
+      @if (errorMessage) {
+        <p class="error-message">
+          {{ errorMessage }}
+        </p>
+      }
+
+      @if (successMessage) {
+        <p class="success-message">
+          {{ successMessage }}
+        </p>
+      }
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Citas registradas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      @if (loading) {
+        <p>Cargando citas...</p>
+      }
+
+      @if (!loading && quotes.length === 0) {
+        <p>Todavía no hay citas registradas.</p>
+      }
+
+      @if (!loading && quotes.length > 0) {
+        <ion-list>
+          @for (quote of quotes; track quote.id) {
+            <app-quote-card
+              [quote]="quote"
+              (deleteQuote)="removeQuote($event)">
+            </app-quote-card>
+          }
+        </ion-list>
+      }
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

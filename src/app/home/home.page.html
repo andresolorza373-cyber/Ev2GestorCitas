@@ -1,21 +1,56 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Blank </ion-title>
+```html
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Gestor de Citas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
+  <div class="welcome-container">
+    <h1>Bienvenido al Gestor de Citas</h1>
+    <p>Guarda, consulta y administra tus citas favoritas.</p>
   </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cita destacada</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      @if (loading) {
+        <p>Cargando cita...</p>
+      } @else if (errorMessage) {
+        <p>{{ errorMessage }}</p>
+      } @else if (randomQuote) {
+        <h2>«{{ randomQuote.phrase }}»</h2>
+        <p>— {{ randomQuote.author }}</p>
+      } @else {
+        <p>Aún no tienes citas guardadas.</p>
+        <p>Agrega tu primera cita para comenzar.</p>
+      }
+
+      <ion-button expand="block" (click)="loadRandomQuote()">
+        Nueva cita aleatoria
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Administración</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button expand="block" routerLink="/quotes">
+        Administrar citas
+      </ion-button>
+
+      <ion-button expand="block" fill="outline" routerLink="/settings">
+        Configuración
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>
+```

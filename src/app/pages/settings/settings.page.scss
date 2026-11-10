@@ -1,0 +1,31 @@
+
+ion-content {
+  --background: #f4f6fa;
+}
+
+h2 {
+  color: #222222;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 20px 8px;
+}
+
+ion-item {
+  --background: #ffffff;
+  --border-radius: 10px;
+  margin: 12px 0;
+}
+
+ion-label p {
+  color: #777777;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.settings-message {
+  color: #2a9d62;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 18px;
+}
